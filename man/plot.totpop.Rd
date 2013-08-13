@@ -5,7 +5,7 @@
 Plot \code{totpop} Objects
 }
 \description{
-This function plots objects of class "\code{totpop}".
+This function plots objects of class \code{"totpop"}.
 }
 \usage{
 \method{plot}{totpop}(x, ...)
@@ -13,7 +13,7 @@ This function plots objects of class "\code{totpop}".
 
 \arguments{
   \item{x}{
-An object of class "\code{totpop}".
+An object of class \code{"totpop"}.
 }
   \item{\dots}{
 Arguments to be passed to and from other methods.

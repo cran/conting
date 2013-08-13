@@ -1,5 +1,5 @@
 bict.fit <-
-function(priornum,missing1,missing2,maximal.mod,IP,eta.hat,ini.index,ini.beta,ini.sig,ini.y0,iters,save,name,null.move.prob){
+function(priornum,missing1,missing2,maximal.mod,IP,eta.hat,ini.index,ini.beta,ini.sig,ini.y0,iters,save,name,null.move.prob,a,b,progress){
 
 missing<-c(missing1,missing2)
 
@@ -39,6 +39,8 @@ curr.y0<-ini.y0
 rj_acc<-c()
 mh_acc<-c()
 counter<-0
+if(progress){									
+pb<-txtProgressBar(min = 0, max = iters, style = 3)}		## set up progress bar
 while(counter<iters){
 
 curr.y<-y
@@ -67,8 +69,8 @@ new.index<-rj$new.index
 if(all(curr.index==new.index)){rj_acc<-c(rj_acc,0)} else{rj_acc<-c(rj_acc,1)}}
 
 if(priornum==2){
-a<-0.001
-b<-0.001
+#a<-0.001
+#b<-0.001
 iR<-IP[new.index==1,new.index==1]
 curr.sig<-1/rgamma(n=1,shape=0.5*(length(new.beta)-1+a),rate=0.5*(b+as.vector(matrix(new.beta[-1],nrow=1)%*%iR[-1,-1]%*%matrix(new.beta[-1],ncol=1))))
 }
@@ -95,6 +97,8 @@ MODEL<-c(MODEL,index2model(new.index))
 Y0<-rbind(Y0,curr.y0)
 
 counter<-counter+1
+if(progress){
+setTxtProgressBar(pb, counter)}									## update progress bar
 
 if(save>0){
 if(counter%%save==0){
@@ -112,5 +116,7 @@ BETA<-c()
 MODEL<-c()
 SIG<-c()
 Y0<-c()}}}
+if(progress){
+close(pb)}
 
 list(BETA=BETA,SIG=SIG,MODEL=MODEL,Y0=Y0,rj_acc=rj_acc,mh_acc=mh_acc)}

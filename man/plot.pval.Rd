@@ -4,7 +4,7 @@
 Plot \code{pval} Objects
 }
 \description{
-This function plots objects of class "\code{pval}".
+This function plots objects of class \code{"pval"}.
 }
 \usage{
 
@@ -12,7 +12,7 @@ This function plots objects of class "\code{pval}".
 }
 \arguments{
   \item{x}{
-An object of class "\code{pval}".
+An object of class \code{"pval"}.
 }
   \item{\dots}{
 Arguments to be passed to and from other methods.

@@ -1,6 +1,15 @@
 bayespval <-
 function(object,n.burnin=0,thin=1,statistic="X2"){
 
+if(n.burnin<0){
+stop("n.burnin should be positive")}
+if(n.burnin>=length(object$MODEL)){
+stop("n.burnin should be less than the MCMC sample size (n.sample)")}
+if(thin<1){
+stop("thin should be greater than or equal to 1")}
+if(statistic!="X2" & statistic!="FreemanTukey" & statistic!="deviance"){
+stop("statistic not found")}
+
 if(is.null(object$missing1)){
 yyy<-object$maximal.mod$y
 xxx<-object$maximal.mod$x} else{

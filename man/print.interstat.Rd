@@ -5,7 +5,7 @@
 Print \code{interstat} Objects
 }
 \description{
-This function prints objects of class "\code{interstat}".
+This function prints objects of class \code{"interstat"}.
 }
 \usage{
 \method{print}{interstat}(x, digits = max(3, getOption("digits") - 3), ...)
@@ -13,7 +13,7 @@ This function prints objects of class "\code{interstat}".
 
 \arguments{
   \item{x}{
-An object of class "\code{interstat}".
+An object of class \code{"interstat"}.
 }
   \item{digits}{
 An optional argument controlling the rounding of output.
@@ -24,7 +24,7 @@ Arguments to be passed to and from other methods.
 }
 \value{
 This function will print out the posterior probability, posterior mean, 
-posterior variance and the 95\% highest posterior density intervals (HPDIs) of each 
+posterior variance and the 100*\code{prob.level}\% highest posterior density intervals (HPDIs) of each 
 log-linear parameter (subject to the argument \code{cutoff}).
 }
 

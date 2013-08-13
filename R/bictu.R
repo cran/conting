@@ -1,5 +1,8 @@
 bictu <-
-function(object,n.sample,save=NULL,name=NULL){
+function(object,n.sample,save=NULL,name=NULL,progress=FALSE){
+
+if(n.sample<=0){
+stop("n.sample must be positive")}
 
 ptm<-(proc.time())[3]
 
@@ -46,7 +49,8 @@ start.y0<-object$Y0[dim(object$Y0)[1],]
 
 runit<-bict.fit(priornum=object$priornum,missing1=object$missing1,missing2=object$missing2,
 maximal.mod=object$maximal.mod,IP=object$IP,eta.hat=object$eta.hat,ini.index=start.index,ini.beta=start.beta,
-ini.sig=start.sig,ini.y0=start.y0,iters=n.sample,save=save,name=name,null.move.prob=object$null.move.prob)
+ini.sig=start.sig,ini.y0=start.y0,iters=n.sample,save=save,name=name,null.move.prob=object$null.move.prob,
+a=object$a,b=object$b,progress=progress)
 
 BETA<-runit$BETA
 MODEL<-runit$MODEL
@@ -68,7 +72,7 @@ rj_acc<-c(object$rj_acc,rj_acc)
 mh_acc<-c(object$mh_acc,mh_acc)
 BETA<-rbind(object$BETA,BETA)
 SIG<-c(object$SIG,SIG)
-Y0<-c(object$Y0,Y0)
+Y0<-rbind(object$Y0,Y0)
 MODEL<-c(object$MODEL,MODEL)}
 
 
@@ -78,7 +82,8 @@ time<-ptm+object$time
 est<-list(BETA=BETA,MODEL=MODEL,SIG=SIG,Y0=Y0,rj_acc=rj_acc,mh_acc=mh_acc,priornum=object$priornum,
 missing1=object$missing1,missing2=object$missing2,maximal.mod=object$maximal.mod,IP=object$IP,
 eta.hat=object$eta.hat,save=save,name=name,missing_details=object$missing_details,
-censored_details=object$censored_details,null.move.prob=object$null.move.prob,time=time)
+censored_details=object$censored_details,null.move.prob=object$null.move.prob,time=time,
+a=object$a,b=object$b)
 
 class(est)<-"bict"
 

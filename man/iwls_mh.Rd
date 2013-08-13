@@ -30,7 +30,7 @@ A p by p matrix giving the inverse of the prior variance matrix.
 }
 \details{
 For details of the original algorithm see Gamerman (1997). For its application to 
-log-linear models see Overstall & King (2012), and the references therein.
+log-linear models see Overstall & King (2013), and the references therein.
 }
 \value{
 The function will output a vector of length p giving the new values of the log-linear 
@@ -40,7 +40,7 @@ parameters.
 Gamerman, D. (1997) Sampling from the posterior distribution in generalised linear mixed
 models. \emph{Statistics and Computing}, \bold{7}, 57--68.
 
-Overstall, A.M. & King, R. (2012) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

@@ -6,7 +6,7 @@
 Print \code{bcct} and \code{bict} Objects
 }
 \description{
-This function prints objects of class "\code{bcct}" and "\code{bict}".
+This function prints objects of class \code{"bcct"} and \code{"bict"}.
 }
 \usage{
 
@@ -17,7 +17,7 @@ This function prints objects of class "\code{bcct}" and "\code{bict}".
 
 \arguments{
   \item{x}{
-An object of class "\code{bcct}" or "\code{bict}".
+An object of class \code{"bcct"} or \code{"bict"}.
 }
   \item{\dots}{
 Arguments to be passed to and from other methods.
@@ -30,7 +30,7 @@ They display the number of cells in the table, the maximal model considered, the
 log-linear parameters in the maximal model, the number of MCMC iterations, the computer time 
 required for the MCMC (in hours, minutes and seconds) and the prior used. 
 
-In the case of objects of class \code{bict}, it also prints out the number of missing and 
+In the case of objects of class \code{"bict"}, it also prints out the number of missing and 
 censored cells.
 }
 

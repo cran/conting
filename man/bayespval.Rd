@@ -15,7 +15,7 @@ bayespval(object, n.burnin = 0, thin = 1, statistic = "X2")
 
 \arguments{
   \item{object}{
-An object of class "\code{bcct}" or "\code{bict}" object.
+An object of class \code{"bcct"} or \code{"bict"} object.
 }
   \item{n.burnin}{
 An optional argument giving the number of iterations to use as burn-in. 
@@ -27,24 +27,25 @@ based on every \code{thin}-th value in the MCMC sample. The default value is 1, 
 thinning.
 }
   \item{statistic}{
-An optional argument giving the discrepancy statistic to use. It can be one of 
-\code{c("X2","FreemanTukey","deviance")} which correspond to the different statistics: 
-"\code{X2}"=Chi-squared statistic, "\code{FreemanTukey}"=Freeman-Tukey statistic, 
-"\code{deviance}"=deviance statistic. See Overstall & King (2012), and references 
+An optional argument giving the discrepancy statistic to use for calculating the Bayesian p-value. It can be one of 
+\code{c("deviance","X2","FreemanTukey")} which correspond to the different statistics: 
+\code{"deviance"} = deviance statistic, \code{"X2"} = Chi-squared statistic, 
+\code{"FreemanTukey"} = Freeman-Tukey statistic. See Overstall & King (2013), and references 
 therein, for descriptions of these statistics.
 }
 }
 
 \details{See Gelman et al (2004, Chapter 6) for more details on Bayesian p-values and see 
-Overstall & King (2012), and references therein, for details of their application to 
+Overstall & King (2013), and references therein, for details of their application to 
 contingency tables.
 
-The use of thinning is recommnded when the number of MCMC iterations and/or the number of 
-log-linear parameters in the maximal model are/is large.
+The use of thinning is recommended when the number of MCMC iterations and/or the number of 
+log-linear parameters in the maximal model are/is large, which may cause problems with 
+computer memory storage.
 }
 
 \value{
-The function will produce an object of class "\code{pval}" which is a list 
+The function will produce an object of class \code{"pval"} which is a list 
 with the following components.
 \item{PRED}{An (\code{n.sample}-\code{n.burnin}) by n* matrix where (n* is the number of observed cell counts) containing the
 predictions of the observed cell counts.}
@@ -60,7 +61,7 @@ and their means.}
 \references{
 Gelman, A., Carlin, J.B., Stern, H.S. & Rubin, D.B. (2004) \emph{Bayesian Data Analysis}, 2nd edition, Chapman & Hall.
 
-Overstall, A.M. & King, R. (2012) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }
@@ -76,27 +77,28 @@ Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
 \examples{
 set.seed(1)
 ## Set seed for reproducibility
-data(rabbit)
-## Load rabbit data
+data(spina)
+## Load spina data
 
-test1<-bict(formula=y~(first+second+hunter)^2,data=rabbit,n.sample=50)
+test1<-bict(formula=y~(S1+S2+S3+eth)^2,data=spina,n.sample=50,prior="UIP")
 ## Do 50 iterations starting at maximal model containing all two-way interactions.
 
 test1p<-bayespval(object=test1,statistic="FreemanTukey",n.burnin=5)
 ## Use the Freeman-Tukey statistic and a burn-in phase of 5 iterations.
 test1p
 ## Will get following output
+
 #Under the Freeman-Tukey statistic 
 #
 #Summary statistics for T_pred 
 #   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-# 0.5711  1.4290  1.7930  2.0560  2.3570  7.4250 
+#  2.812   4.695   5.190   5.777   6.405  14.490 
 #
 #Summary statistics for T_obs 
 #   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-# 0.1979  0.5551  0.8691  0.9021  1.1300  1.8250 
+#  4.566   4.861   5.197   5.430   6.108   6.460 
 #
-#Bayesian p-value =  0.8667
+#Bayesian p-value =  0.4667
 
 ## Can do a plot
 

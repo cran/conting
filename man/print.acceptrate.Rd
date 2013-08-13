@@ -5,7 +5,7 @@
 Prints \code{acceptrate} Objects
 }
 \description{
-This function prints objects of class "\code{acceptrate}".
+This function prints objects of class \code{"acceptrate"}.
 }
 \usage{
 
@@ -14,10 +14,10 @@ This function prints objects of class "\code{acceptrate}".
 
 \arguments{
   \item{x}{
-An object of class "\code{acceptrate}".
+An object of class \code{"acceptrate"}.
 }
   \item{digits}{
-An optional argument controling the rounding of output.
+An optional argument controlling the rounding of output.
 }
   \item{\dots}{
 Arguments to be passed to and from other methods.

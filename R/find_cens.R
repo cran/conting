@@ -1,9 +1,16 @@
 find_cens <-
-function(sources,cens_source,data,unobs.level="un",obs.level="obs"){
+function(sources,cens_source,data=NULL,unobs.level="un",obs.level="obs"){
+
+if(!is.null(data)){
+if(attributes(data)$class=="table"){
+data<-data.frame(data)}}
 
 options(contrasts=c("contr.sum","contr.poly"),warn=-1)
+if(!is.null(data)){
 small.X<-model.frame(sources,data=data)
-smaller.X<-model.frame(cens_source,data=data)
+smaller.X<-model.frame(cens_source,data=data)} else{
+small.X<-model.frame(sources)
+smaller.X<-model.frame(cens_source)}
 options(contrasts=c("contr.treatment","contr.poly"),warn=0)
 
 which<-c()

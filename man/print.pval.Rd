@@ -5,7 +5,7 @@
 Print \code{pval} Objects
 }
 \description{
-This function prints objects of class \code{pval}.
+This function prints objects of class \code{"pval"}.
 }
 \usage{
 \method{print}{pval}(x, digits = max(3, getOption("digits") - 3), ...)
@@ -13,7 +13,7 @@ This function prints objects of class \code{pval}.
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-An object of class \code{pval}.
+An object of class \code{"pval"}.
 }
   \item{digits}{
 An optional argument controlling the rounding of output.

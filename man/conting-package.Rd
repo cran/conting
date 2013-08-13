@@ -15,8 +15,8 @@ populations.
 \tabular{ll}{
 Package: \tab conting\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2012-11-17\cr
+Version: \tab 1.1\cr
+Date: \tab 2013-08-13\cr
 License: \tab GPL-2\cr
 }
 For the Bayesian analysis of complete contingency tables the key function is \code{\link{bcct}} 
@@ -25,10 +25,10 @@ indicator. Further MCMC iterations can be performed by using \code{\link{bcctu}}
 
 For the Bayesian analysis of incomplete contingency tables the key function is \code{\link{bict}} 
 which uses MCMC methods to generate a sample from the joint posterior distribution of the model parameters, model 
-indicator and the missing and/or censored cell entries. Further MCMC iterations can be performed 
+indicator and the missing, and, possibly, censored cell entries. Further MCMC iterations can be performed 
 by using \code{\link{bictu}}.
 
-In both cases see Overstall & King (2012), and the references therein, for details on the statistical 
+In both cases see Overstall & King (2013), and the references therein, for details on the statistical 
 and computational methods, as well as detailed examples.
 
 }
@@ -38,7 +38,7 @@ Antony M. Overstall \email{antony@mcs.st-and.ac.uk}
 Maintainer: Antony M. Overstall \email{antony@mcs.st-and.ac.uk}
 }
 \references{
-Overstall, A.M. & King, R. (2012) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }
@@ -50,7 +50,7 @@ set.seed(1)
 ## Set seed for reproducibility
 data(AOH)
 ## Load AOH data
-test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100)
+test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100,prior="UIP")
 ## Bayesian analysis of complete contingency table. Let the saturated model
 ## be the maximal model and do 100 iterations.
 
@@ -92,45 +92,49 @@ summary(test1)
 
 set.seed(1)
 ## Set seed for reproducibility
-data(rabbit)
-## Load rabbit data
-test2<-bict(formula=y~(first+second+hunter)^2,data=rabbit,n.sample=100)
+data(spina)
+## Load spina data
+test2<-bict(formula=y~(S1+S2+S3+eth)^2,data=spina,n.sample=100,prior="UIP")
 ## Bayesian analysis of incomplete contingency table. Let the model with two-way 
 ## interactions be the maximal model and do 100 iterations.
 
 summary(test2)
 ## Summarise the result. Will get:
+
 #Posterior summary statistics of log-linear parameters:
-#               post_prob post_mean post_var lower_lim upper_lim
-#(Intercept)            1    2.8491 0.009506    2.6741    2.9971
-#first1                 1   -0.4172 0.009777   -0.5679   -0.2332
-#second1                1   -0.3432 0.008762   -0.5568   -0.2133
-#hunter1                1   -0.7493 0.007090   -0.9160   -0.6181
-#first1:second1         1    0.5711 0.006318    0.4333    0.7056
+#            post_prob post_mean post_var lower_lim upper_lim
+#(Intercept)         1    1.0427 0.033967    0.6498    1.4213
+#S11                 1   -0.3159 0.015785   -0.4477   -0.1203
+#S21                 1    0.8030 0.018797    0.6127    1.1865
+#S31                 1    0.7951 0.003890    0.6703    0.8818
+#eth1                1    2.8502 0.033455    2.4075    3.1764
+#eth2                1    0.1435 0.072437   -0.4084    0.5048
+#S21:S31             1   -0.4725 0.002416   -0.5555   -0.3928
 #NB: lower_lim and upper_lim refer to the lower and upper values of the
 #95 % highest posterior density intervals, respectively
 #
 #Posterior model probabilities:
-#  prob model_formula                                          
-#1 0.71 ~first + second + hunter + first:second                
-#2 0.14 ~first + second + hunter + first:second + second:hunter
-#3 0.10 ~first + second + hunter + first:second + first:hunter 
+#  prob model_formula                                                         
+#1 0.36 ~S1 + S2 + S3 + eth + S2:S3                                           
+#2 0.19 ~S1 + S2 + S3 + eth + S2:S3 + S2:eth                                  
+#3 0.12 ~S1 + S2 + S3 + eth + S1:eth + S2:S3                                  
+#4 0.12 ~S1 + S2 + S3 + eth + S1:S2 + S1:S3 + S1:eth + S2:S3 + S2:eth + S3:eth
+#5 0.10 ~S1 + S2 + S3 + eth + S1:S3 + S1:eth + S2:S3                          
+#6 0.06 ~S1 + S2 + S3 + eth + S1:S3 + S1:eth + S2:S3 + S2:eth                 
+#Total number of models visited =  8 
 #
-#Total number of models visited =  4 
-#
-#Posterior mean of total population size = 261.19 
-#95 % highest posterior density interval for total population size = ( 207 317 ) 
+#Posterior mean of total population size = 726.75 
+#95 % highest posterior density interval for total population size = ( 706 758 ) 
 #
 #Under the X2 statistic 
 #
 #Summary statistics for T_pred 
 #   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#  1.284   4.240   6.584   7.238   9.653  16.970 
+#  8.329  15.190  20.040  22.550  24.180 105.200 
 #
 #Summary statistics for T_obs 
 #   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-# 0.7725  3.3950  5.0520  5.6300  6.1670 14.7200 
+# 5.329  18.270  22.580  21.290  24.110  37.940 
 #
-#Bayesian p-value =  0.68 
-
+#Bayesian p-value =  0.45 
 }

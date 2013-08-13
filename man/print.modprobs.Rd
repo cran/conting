@@ -5,7 +5,7 @@
 Print \code{modprobs} Objects
 }
 \description{
-This function prints objects of class "\code{modprobs}".
+This function prints objects of class \code{"modprobs"}.
 }
 \usage{
 \method{print}{modprobs}(x, digits = max(3, getOption("digits") - 3), ...)
@@ -13,7 +13,7 @@ This function prints objects of class "\code{modprobs}".
 
 \arguments{
   \item{x}{
-An object of class "\code{modprobs}".
+An object of class \code{"modprobs"}.
 }
   \item{digits}{
 An optional argument controlling the rounding of output.

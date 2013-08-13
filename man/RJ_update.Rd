@@ -49,7 +49,7 @@ A matrix giving the inverse of the prior variance matrix for the log-linear para
 }
 \details{
 For the original algorithm see Forster et al (2012). For details on its application to log-linear models 
-see Overstall & King (2012), and the references therein.
+see Overstall & King (2013), and the references therein.
 }
 \value{
 The function will return a list with the following components:
@@ -60,7 +60,7 @@ The function will return a list with the following components:
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for generalised linear models and generalised 
 linear mixed models. \emph{Statistics and Computing}, \bold{22}, 107--120.
 
-Overstall, A.M. & King, R. (2012) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }
@@ -96,21 +96,25 @@ curr.index<-formula2index(big.X=maximal.mod$x,formula=y~alc+hyp+obe+alc:hyp,data
 ## Calculate index for current model including alc:hyp interaction
 curr.index
 ## Print out current index
+#[1] 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 pm<-prop_mod(curr.index=curr.index,data=AOH,maximal.mod=maximal.mod)
 ## Propose a model
 p2<-(1-pm$null.move.prob)/pm$total.choices
 p2
 ## Calculate probability of proposing proposed model from current model
+#[1] 0.1666667
 
 prop.index<-pm$new.index
 prop.index
 ## Assign and print out proposal index
+# [1] 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 dm<-prop_mod(curr.index=prop.index,data=AOH,maximal.mod=maximal.mod,null.move.prob=0)
 p1<-(1-pm$null.move.prob)/dm$total.choices
 p1
 ## Calculate probability of proposing current model from proposed model
+#[1] 0.1666667
 
 RJ_update(prop.index=prop.index,curr.index=curr.index,
 curr.beta=coef(maximal.mod)[curr.index==1],eta.hat=eta.hat,curr.y=AOH$y,big.X=maximal.mod$x,
@@ -121,12 +125,12 @@ i.curr.prior.var=IP[curr.index==1,curr.index==1])
 ## Do one iteration of reversible jump algorithm. Will get:
 
 #$new.beta
-#(Intercept)        alc1        alc2        alc3        hyp1        obe1        obe2 
-# 2.88486776 -0.03518384 -0.07998927  0.07833641 -0.50460978 -0.07767750 -0.02390702 
-
+#(Intercept)        alc1        alc2        alc3        hyp1        obe1 
+# 2.87128918 -0.07098006 -0.07221330  0.08748803 -0.51899802 -0.07855115 
+#       obe2 
+#-0.02474727 
+#
 #$new.index
 # [1] 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-
-
 
 }

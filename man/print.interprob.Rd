@@ -5,7 +5,7 @@
 Print \code{interprob} Objects
 }
 \description{
-This function prints objects of class "\code{interprob}".
+This function prints objects of class \code{"interprob"}.
 }
 \usage{
 \method{print}{interprob}(x, digits = max(3, getOption("digits") - 3), ...)
@@ -13,7 +13,7 @@ This function prints objects of class "\code{interprob}".
 
 \arguments{
   \item{x}{
-An object of class "\code{interprob}".
+An object of class \code{"interprob"}.
 }
   \item{digits}{
 An optional argument controlling the rounding of output.

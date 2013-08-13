@@ -1,5 +1,5 @@
 beta_mode <-
-function(X,prior="UIP",y,IP){
+function(X,prior="SBH",y,IP,a=0.001,b=0.001){
 
 Xt<-t(X)							## transpose of X
 sy<-log(ifelse(y>0,y,1/6))					## starting values
@@ -29,7 +29,8 @@ priornum<-c(1,2)[prior==priortypes]				## which prior - defines prior part of po
 
 if(priornum==1){
 iSig<-IP[-1,-1]				## inverse prior variance
-Sig<-solve(iSig)						## prior variance
+#Sig<-solve(iSig)						## prior variance
+Sig<-chol2inv(chol(iSig))						## prior variance
 pp<-dim(X)[2]-1							## number of parameters - 1
 
 prior<-function(beta){
@@ -44,8 +45,8 @@ d2prior<-function(beta){
 ################# SBH Priors ###################################
 
 if(priornum==2){						## parameters from inverse gamma
-a<-0.001
-b<-0.001
+#a<-0.001
+#b<-0.001
 iSig<-IP[-1,-1]				## inverse scale matrix for t-distribution
 pp<-dim(X)[2]-1
 

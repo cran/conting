@@ -1,5 +1,9 @@
 bcctu <-
-function(object,n.sample,save=NULL,name=NULL){
+function(object,n.sample,save=NULL,name=NULL,progress=FALSE){
+
+if(n.sample<=0){
+stop("n.sample must be positive")}
+
 ptm<-(proc.time())[3]
 
 if(is.null(save)){save<-object$save}
@@ -39,7 +43,8 @@ start.index<-model2index(object$MODEL[length(object$SIG)],dig=dim(object$BETA)[2
 start.beta<-object$BETA[dim(object$BETA)[1],start.index==1]
 
 runit<-bcct.fit(priornum=object$priornum,maximal.mod=object$maximal.mod,IP=object$IP,eta.hat=object$eta.hat,
-ini.index=start.index,ini.beta=start.beta,ini.sig=start.sig,iters=n.sample,save=save,name=name,null.move.prob=object$null.move.prob)
+ini.index=start.index,ini.beta=start.beta,ini.sig=start.sig,iters=n.sample,save=save,name=name,null.move.prob=object$null.move.prob,
+a=object$a,b=object$b,progress=progress)
 
 BETA<-runit$BETA
 MODEL<-runit$MODEL
@@ -64,7 +69,7 @@ MODEL<-c(object$MODEL,MODEL)}
 ptm<-(proc.time())[3]-ptm
 time<-object$time+ptm
 
-est<-list(BETA=BETA,MODEL=MODEL,SIG=SIG,rj_acc=rj_acc,mh_acc=mh_acc,priornum=object$priornum,maximal.mod=object$maximal.mod,IP=object$IP,eta.hat=object$eta.hat,save=save,name=name,null.move.prob=object$null.move.prob,time=time)
+est<-list(BETA=BETA,MODEL=MODEL,SIG=SIG,rj_acc=rj_acc,mh_acc=mh_acc,priornum=object$priornum,maximal.mod=object$maximal.mod,IP=object$IP,eta.hat=object$eta.hat,save=save,name=name,null.move.prob=object$null.move.prob,time=time,a=object$a,b=object$b)
 
 class(est)<-"bcct"
 

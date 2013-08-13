@@ -19,15 +19,15 @@ index2formula(index, maximal.mod)
 The design matrix under the maximal model.
 }
   \item{formula}{
-An object of class "\code{formula}": a symbolic description of the 
+An object of class \code{"formula"}: a symbolic description of the 
 model to convert to a binary index.
 }
   \item{data}{
-An object of class "\code{data.frame}" containing the variables in the model.
+An object of class \code{"data.frame"} containing the variables in the model.
 }
 
   \item{maximal.mod}{
-An object of class "\code{glm}" giving the fit of the maximal model.
+An object of class \code{"glm"} giving the fit of the maximal model.
 }
 
   \item{index}{
@@ -41,7 +41,7 @@ The function \code{formula2index} will produce a binary vector of the same lengt
 parameters in the maximal model, indicating which parameters are present in the model represented by the 
 argument \code{formula}.
 
-The function \code{index2formula} will produce an object of class "\code{formula}": a symbolic description of the model given by 
+The function \code{index2formula} will produce an object of class \code{"formula"}: a symbolic description of the model given by 
 the argument \code{index}.
 }
 

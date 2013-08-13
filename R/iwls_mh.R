@@ -5,7 +5,8 @@ curr.LP<-as.vector(curr.X%*%matrix(curr.beta,ncol=1)) 		## current linear predic
 
 curr.w<-exp(curr.LP)  						## current elements of weight matrix
 icurr.C<-iprior.var+crossprod(x=curr.X*curr.w,y=curr.X)  	## inverse proposal variance
-curr.C<-solve(icurr.C) 						## proposal variance
+#curr.C<-solve(icurr.C)
+curr.C<-chol2inv(chol(icurr.C))						## proposal variance
 curr.z<-curr.LP+(curr.y-curr.w)/curr.w 				## current value of working vector
 curr.m<-as.vector(tcrossprod(x=curr.C,y=curr.X*curr.w)%*%matrix(curr.z,ncol=1)) ## proposal mean
 prop.beta<-as.vector(rmvnorm(n=1,mean=curr.m,sigma=curr.C))	## proposal
@@ -14,7 +15,8 @@ prop.LP<-as.vector(curr.X%*%matrix(prop.beta,ncol=1))		## proposed linear predic
 
 prop.w<-exp(prop.LP)						## proposed elememts of weight matrix
 iprop.C<-iprior.var+crossprod(x=curr.X*prop.w,y=curr.X)		## inverse current variance
-prop.C<-solve(iprop.C)						## current variance
+#prop.C<-solve(iprop.C)						## current variance
+prop.C<-chol2inv(chol(iprop.C))						## current variance
 prop.z<-prop.LP+(curr.y-prop.w)/prop.w				## proposed working vector
 prop.m<-as.vector(tcrossprod(x=prop.C,y=curr.X*prop.w)%*%matrix(prop.z,ncol=1))##current mean
 

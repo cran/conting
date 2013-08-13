@@ -6,7 +6,7 @@ Compute Posterior Model Probabilities
 }
 \description{
 This function computes the posterior model probabilities using the MCMC output of 
-"\code{bcct}" and "\code{bict}" objects. 
+\code{"bcct"} and \code{"bict"} objects. 
 }
 \usage{
 mod_probs(object, n.burnin = 0, scale = 0.1, best = NULL, thin = 1)
@@ -14,7 +14,7 @@ mod_probs(object, n.burnin = 0, scale = 0.1, best = NULL, thin = 1)
 
 \arguments{
   \item{object}{
-An object of class "\code{bcct}" or "\code{bict}".
+An object of class \code{"bcct"} or \code{"bict"}.
 }
   \item{n.burnin}{
 An optional argument giving the number of iterations to use as burn-in. 
@@ -29,8 +29,8 @@ larger than \code{scale} times the probability of the posterior modal model. The
   \item{best}{
 An optional argument for controlling how the posterior model probabilities are returned 
 as output. The function will return details on the \code{best} models with the highest posterior 
-model probabilities. For example, if \code{best=4}, then details on the four model with the highest 
-posterior model probabilities will be returned. The default value is NULL. If not NULL than this argument 
+model probabilities. For example, if \code{best=4}, then details on the four models with the highest 
+posterior model probabilities will be returned. The default value is \code{NULL}. If not \code{NULL}, then this argument 
 takes precedent over \code{scale}.
 }
   \item{thin}{
@@ -43,12 +43,16 @@ thinning.
 It will output 
 only the probabilities of the "best" models, as defined by the user specifying either the \code{best} or 
 \code{scale} arguments.
+
+The use of thinning is recommended when the number of MCMC iterations and/or the number of 
+log-linear parameters in the maximal model are/is large, which may cause problems with 
+computer memory storage.
 }
 \value{
-The function will return an object of class "\code{modprobs}" which is a list containing the following 
+The function will return an object of class \code{"modprobs"} which is a list containing the following 
 components.
 
-\item{table}{An object of class "\code{data.frame}" with number of rows defined by \code{scale} or 
+\item{table}{An object of class \code{"data.frame"} with number of rows defined by \code{scale} or 
 \code{best} and columns: \code{model_formula}; giving the model (in terms of a printed formula), 
 and \code{prob}; giving the posterior model probability.}
 
@@ -71,7 +75,7 @@ set.seed(1)
 data(AOH)
 ## Load AOH data
 
-test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100)
+test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100,prior="UIP")
 ## Starting from maximal model of saturated model do 100 iterations of MCMC
 ## algorithm.
 

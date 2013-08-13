@@ -4,6 +4,7 @@
 \title{
 Bayesian Analysis of Complete Contingency Tables
 }
+\encoding{UTF-8}
 \description{
 These functions implement a Bayesian analysis of complete contingency tables. This is 
 accomplished using an MCMC algorithm where the null moves are performed using 
@@ -14,43 +15,47 @@ reversible jump algorithm.
 MCMC iterations, if required.
 }
 \usage{
-bcct(formula, data, n.sample, prior = "UIP", start.formula = NULL, 
-start.beta = NULL, start.sig = NULL, save = 0, name = NULL, null.move.prob=0.5)
+bcct(formula, data, n.sample, prior = "SBH", start.formula = NULL, 
+start.beta = NULL, start.sig = NULL, save = 0, name = NULL, null.move.prob=0.5, 
+a = 0.001, b = 0.001, progress = FALSE)
 
-bcctu(object, n.sample, save = NULL, name = NULL)
+bcctu(object, n.sample, save = NULL, name = NULL, progress = FALSE)
 }
 
 \arguments{
   
-  \item{formula}{An object of class "\code{formula}": a symbolic description of the 
+  \item{formula}{An object of class \code{"formula"}: a symbolic description of the 
 maximal model.}
 
-  \item{object}{An object of class "\code{bcct}" produced as a previous call to \code{bcct} or \code{bcctu}.}
+  \item{object}{An object of class \code{"bcct"} produced as a previous call to \code{bcct} or \code{bcctu}.}
 
-  \item{data}{An object of class "\code{data.frame}" containing the variables in the model.}
+  \item{data}{An object of class \code{"data.frame"} (or \code{"table"}) containing the variables in the 
+model. If the model variables are not found in \code{data}, the variables are taken from 
+\code{environment(formula)}, typically the environment from which \code{bcct} is called.}
 
   \item{n.sample}{
 A numeric scalar giving the number of (additional, in the case of \code{bcctu}) MCMC iterations to perform.
 }
   \item{prior}{An optional argument giving the prior to be used in the analysis. It can be one of 
-\code{c("UIP","SBH")}, where \code{"UIP"}=unit information prior; and \code{"SBH"}=Sabanes-Bove & Held prior. The 
-default value is \code{"UIP"}.
+\code{c("UIP","SBH")}, where \code{"UIP"} = unit information prior; and \code{"SBH"} = Sabanes-Bové & Held prior. The 
+default value is \code{"SBH"}.
 }
 
   \item{start.formula}{
-An optional argument giving an object of class "\code{formula}": a symbolic description of the 
-starting model in the MCMC algorithm. If NULL (the default) the starting model will be the maximal 
+An optional argument giving an object of class \code{"formula"}: a symbolic description of the 
+starting model in the MCMC algorithm. If \code{NULL} (the default) the starting model will be the maximal 
 model. 
 }
   \item{start.beta}{
 An optional argument giving the starting values of the log-linear parameters for the MCMC algorithm. 
-It should be a vector of the same length as the number of log-linear parameters in the staring model 
-implied by the argument \code{start.formula}. If NULL (the default) the starting value will be the 
+It should be a vector of the same length as the number of log-linear parameters in the starting model 
+implied by the argument \code{start.formula}. If \code{NULL} (the default) the starting value will be the 
 posterior mode under the maximal model.
 }
   \item{start.sig}{
-An optional argument giving the starting value of sigma^2 for the MCMC algorithm when the argument 
-prior is "SBH". If NULL (the default) the starting value will be one.
+An optional argument giving the starting value of sigma^2 (under the Sabanes-Bové & Held prior) for the 
+MCMC algorithm when the argument of prior is \code{"SBH"}. If \code{NULL} (the default) the starting 
+value will be one.
 }
   \item{save}{
 An optional argument for saving the MCMC output mid-algorithm. 
@@ -59,37 +64,49 @@ For \code{bcct}, if positive, the function will save the MCMC output to external
 files every \code{save} iterations. If zero (the default), the function will not save 
 the MCMC output to external files. 
 
-For \code{bcctu}, if non-NULL, the function will save the MCMC output to external text 
-files every \code{save} iterations. If NULL (the default), it will inherit the value of 
+For \code{bcctu}, if non-\code{NULL}, the function will save the MCMC output to external text 
+files every \code{save} iterations. If \code{NULL} (the default), it will inherit the value of 
 \code{save} from the previous call to \code{bcct} or \code{bcctu}.
 }
   \item{name}{
 An optional argument giving a prefix to the file name of the external files saved if the argument \code{save} is 
-positive. For \code{bcct}, a value of NULL means the external files will not have a prefix. For 
-\code{bcctu}, a value of NULL, means the prefix will be inherited from the previous call to 
+positive. For \code{bcct}, a value of \code{NULL} means the external files will not have a prefix. For 
+\code{bcctu}, a value of \code{NULL}, means the prefix will be inherited from the previous call to 
 \code{bcct} or \code{bcctu}. 
 }
   \item{null.move.prob}{
 An optional scalar argument giving the probability of performing a null move in the reversible jump 
 algorithm, i.e. proposing a move to the current model. The default value is 0.5.
 }
+  \item{a}{
+The shape hyperparameter of the Sabanes-Bové & Held prior, see Overstall & King (2013). The default value 
+is 0.001.
+}
+  \item{b}{
+The scale hyperparameter of the Sabanes-Bové & Held prior, see Overstall & King (2013). The default value 
+is 0.001.
+}
+  \item{progress}{
+Logical argument. If \code{TRUE}, then a progress bar will be displayed. The default value is 
+\code{FALSE}.
+}
 }
 \details{
 For identifiability, the parameters are constrained. The \code{\link{conting-package}} uses sum-to-zero constraints. 
-See Overstall & King (2012), and the references therein, for more details. 
+See Overstall & King (2013), and the references therein, for more details. 
 
 The Metropolis-Hastings algorithm employed is the iterated weighted least squares method for 
 generalised linear models (GLMs) proposed by Gamerman (1997). The reversible jump algorithm employed is 
 that orthogonal projections method for GLMs proposed by Forster et al (2012). For details on these 
-methods applied to log-linear models see Overstall & King (2012), and the references therein. 
+methods applied to log-linear models see Overstall & King (2013), and the references therein. 
 
-For details on the unit information and Sabanes-Bove & Held priors for generalised linear models see Ntzoufras 
-et al (2003) and Sabanes-Bove & Held (2011), respectively. See Overstall & King (2012), and the references therein, 
+For details on the unit information and Sabanes-Bové & Held priors for generalised linear models see Ntzoufras 
+et al (2003) and Sabanes-Bové & Held (2011), respectively. See Overstall & King (2013), and the references therein, 
 for their application to log-linear models and contingency tables.
 
 }
 \value{
-The functions will return an object of class "\code{bcct}" which is a list with the following components:
+The functions will return an object of class \code{"bcct"} which is a list with the following components:
 
 \item{BETA}{An \code{n.sample} by p matrix containing the sampled values of the log-linear parameters, where p 
 is the number of log-linear parameters in the maximal model. For elements of this matrix which correspond 
@@ -97,7 +114,7 @@ to a log-linear parameter which is not present for the current model a zero is r
 
 \item{MODEL}{A vector of length \code{n.sample} giving the sampled model indicators in hexadecimal format.}
 
-\item{SIG}{A vector of length \code{n.sample} giving the sampled values for sigma^2 under the Sabanes-Bove & Held prior. If the 
+\item{SIG}{A vector of length \code{n.sample} giving the sampled values for sigma^2 under the Sabanes-Bové & Held prior. If the 
 unit information prior is used then the components of this vector will be one.}
 
 \item{rj_acc}{A binary vector of the same length as the number of reversible jump moves attempted. A 0 indicates 
@@ -106,9 +123,9 @@ that the proposal was rejected, and a 1 that the proposal was accepted.}
 \item{mh_acc}{A binary vector of the same length as the number of Metropolis-Hastings moves attempted. A 0 indicates 
 that the proposal was rejected, and a 1 that the proposal was accepted.}
 
-\item{priornum}{A numeric scalar indicating which prior was used: 1=\code{"UIP"}, 2=\code{"SBH"}.}
+\item{priornum}{A numeric scalar indicating which prior was used: 1 = \code{"UIP"}, 2 = \code{"SBH"}.}
 
-\item{maximal.mod}{An object of class "\code{glm}" giving the fit of the maximal model.}
+\item{maximal.mod}{An object of class \code{"glm"} giving the fit of the maximal model.}
 
 \item{IP}{A p by p matrix giving the inverse of the prior scale matrix for the maximal model.}
 
@@ -124,10 +141,15 @@ The argument \code{null.move.prob}.}
 
 \item{time}{
 The total computer time (in seconds) used for the MCMC computations.}
+  \item{a}{
+The argument \code{a}.
 }
-
+  \item{b}{
+The argument \code{b}.
+}
+}
 \references{
-Sabanes-Bove, D. & Held, L. (2011) Hyper-g priors for generalized linear models. \emph{Bayesian
+Sabanes-Bové, D. & Held, L. (2011) Hyper-g priors for generalized linear models. \emph{Bayesian
 Analysis}, \bold{6}, 387--410.
 
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for generalised linear models and generalised 
@@ -149,6 +171,9 @@ Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
 }
 \note{
 These functions are wrappers for \code{\link{bcct.fit}}.
+
+In Version 1.0 of \code{\link{conting-package}}, note that the default value for \code{prior} was \code{"UIP"}. From 
+Version 1.1 onwards, the default value is \code{"SBH"}. 
 }
 
 \seealso{
@@ -164,13 +189,13 @@ set.seed(1)
 data(AOH)
 ## Load the AOH data
 
-test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=50)
+test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=50,prior="UIP")
 ## Let the maximal model be the saturated model. Starting from the 
-## posterior mode of the maximal model do 500 iterations under the unit 
+## posterior mode of the maximal model do 50 iterations under the unit 
 ## information prior.
 
 test1<-bcctu(object=test1,n.sample=50)
-## Do another 500 iterations
+## Do another 50 iterations
 
 test1
 ## Printing out a bcct object produces this simple summary
@@ -225,7 +250,7 @@ summary(test1)
 #
 #Bayesian p-value =  0.28
 
-## For more examples see Overstall & King (2012).
+## For more examples see Overstall & King (2013).
 
 
 }

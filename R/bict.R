@@ -1,7 +1,24 @@
 bict <-
-function(formula,data,n.sample,prior="UIP",cens=NULL,start.formula=NULL,start.beta=NULL,start.sig=NULL,start.y0=NULL,save=0,name=NULL,null.move.prob=0.5){
+function(formula,data=NULL,n.sample,prior="SBH",cens=NULL,start.formula=NULL,start.beta=NULL,start.sig=NULL,start.y0=NULL,save=0,name=NULL,null.move.prob=0.5,a=0.001,b=0.001,progress=FALSE){
+
+if(n.sample<=0){
+stop("n.sample must be positive")}
+if(prior!="UIP" & prior!="SBH"){
+stop("prior not found")}
+if(save<0){
+stop("save must be non-negative")}
+if(null.move.prob<0 | null.move.prob>1){
+stop("null.move.prob is a probability and should be between 0 and 1")}
+if(a<0 & a!=(-1)){
+stop("a and b must be non-negative")}
+if(b<0){
+stop("a and b must be non-negative")}
 
 ptm<-(proc.time())[3]
+
+if(!is.null(data)){
+if(attributes(data)$class=="table"){
+data<-data.frame(data)}}
 
 if(save>0){
 if(is.null(name)){
@@ -30,7 +47,9 @@ priortypes<-c("UIP","SBH")
 priornum<-c(1,2)[prior==priortypes]
 
 options(contrasts=c("contr.sum","contr.poly"),warn=-1)
-maximal.mod<-glm(formula=formula,data=data,method="model.frame",na.action=na.pass,family=poisson,control=list(maxit=1),x=TRUE,y=TRUE)
+if(!is.null(data)){
+maximal.mod<-glm(formula=formula,data=data,method="model.frame",na.action=na.pass,family=poisson,control=list(maxit=1),x=TRUE,y=TRUE)} else{
+maximal.mod<-glm(formula=formula,method="model.frame",na.action=na.pass,family=poisson,control=list(maxit=1),x=TRUE,y=TRUE)}
 options(contrasts=c("contr.treatment","contr.poly"),warn=0)
 
 missing1<-(1:length(maximal.mod[,1]))[is.na(maximal.mod[,1])]
@@ -47,7 +66,9 @@ missing_details<-data[missing1,-1]
 censored_details<-data[missing2,-1]
 
 options(contrasts=c("contr.sum","contr.poly"),warn=-1)
-maximal.mod<-glm(formula=formula,data=data,family=poisson,control=list(maxit=1),x=TRUE,y=TRUE)
+if(!is.null(data)){
+maximal.mod<-glm(formula=formula,data=data,family=poisson,control=list(maxit=1),x=TRUE,y=TRUE)} else{
+maximal.mod<-glm(formula=formula,family=poisson,control=list(maxit=1),x=TRUE,y=TRUE)}
 options(contrasts=c("contr.treatment","contr.poly"),warn=0)
 
 big.X<-maximal.mod$x
@@ -59,7 +80,7 @@ IP<-t(big.X)%*%big.X/n
 IP[,1]<-0
 IP[1,0]<-0
 
-bmod<-beta_mode(X=big.X[-missing,],y=y[-missing],prior=prior,IP=IP)
+bmod<-beta_mode(X=big.X[-missing,],y=y[-missing],prior=prior,IP=IP,a=a,b=b)
 
 eta.hat<-as.vector(big.X%*%matrix(bmod,ncol=1))
 
@@ -78,7 +99,9 @@ start.y0<-round(exp(eta.hat[missing]))}
 
 start.mod<-index2model(start.index)
 
-runit<-bict.fit(priornum=priornum,missing1=missing1,missing2=missing2,maximal.mod=maximal.mod,IP=IP,eta.hat=eta.hat,ini.index=start.index,ini.beta=start.beta,ini.sig=start.sig,ini.y0=start.y0,iters=n.sample,save=save,name=name,null.move.prob=null.move.prob)
+runit<-bict.fit(priornum=priornum,missing1=missing1,missing2=missing2,maximal.mod=maximal.mod,
+IP=IP,eta.hat=eta.hat,ini.index=start.index,ini.beta=start.beta,ini.sig=start.sig,ini.y0=start.y0,
+iters=n.sample,save=save,name=name,null.move.prob=null.move.prob,a=a,b=b,progress=progress)
 BETA<-runit$BETA
 MODEL<-runit$MODEL
 SIG<-runit$SIG
@@ -96,7 +119,7 @@ MODEL<-as.character(read.table(file=name_MODEL,header=FALSE)[,1])}
 
 time<-(proc.time())[3]-ptm
 
-est<-list(BETA=BETA,MODEL=MODEL,SIG=SIG,Y0=Y0,missing1=missing1,missing2=missing2,missing_details=missing_details,censored_details=censored_details,rj_acc=rj_acc,mh_acc=mh_acc,priornum=priornum,maximal.mod=maximal.mod,IP=IP,eta.hat=eta.hat,save=save,name=name,null.move.prob=null.move.prob,time=time)
+est<-list(BETA=BETA,MODEL=MODEL,SIG=SIG,Y0=Y0,missing1=missing1,missing2=missing2,missing_details=missing_details,censored_details=censored_details,rj_acc=rj_acc,mh_acc=mh_acc,priornum=priornum,maximal.mod=maximal.mod,IP=IP,eta.hat=eta.hat,save=save,name=name,null.move.prob=null.move.prob,time=time,a=a,b=b)
 
 class(est)<-"bict"
 

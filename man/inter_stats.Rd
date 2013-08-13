@@ -6,7 +6,7 @@ Compute Posterior Summary Statistics of the Log-Linear Parameters.
 }
 \description{
 This function computes the posterior summary statistics of the log-linear parameters
-using the MCMC output of "\code{bcct}" and "\code{bict}" objects. The posterior summary 
+using the MCMC output of \code{"bcct"} and \code{"bict"} objects. The posterior summary 
 statistics are posterior probability, posterior mean, posterior variance and lower and 
 upper limits highest posterior density intervals (HPDIs).
 }
@@ -16,15 +16,13 @@ inter_stats(object, cutoff = 0.75, n.burnin = 0, thin = 1, prob.level = 0.95)
 
 \arguments{
   \item{object}{
-An object of class "\code{bcct}" or "\code{bict}".
+An object of class \code{"bcct"} or \code{"bict"}.
 }
   \item{cutoff}{
 An optional argument giving the cutoff posterior probability for displaying posterior 
 summary statistics of the log-linear parameters. Only those log-linear parameters with 
 a posterior probability greater than \code{cutoff} will be returned as part of the output. 
-The default value is 0.75 which corresponds to a Bayes factor of 3 which is the boundary 
-between the evidence being \emph{positive} and \emph{not worth more than a bare mention} 
-(Kass & Raftery, 1995).
+The default value is 0.75.
 }
   \item{n.burnin}{
 An optional argument giving the number of iterations to use as burn-in. 
@@ -40,10 +38,15 @@ An optional argument giving the probability content of the HPDIs. The default va
 }
 }
 \details{
-This function provides an expanded version of what \code{\link{inter_probs}} provides.}
+This function provides an expanded version of what \code{\link{inter_probs}} provides.
+
+The use of thinning is recommended when the number of MCMC iterations and/or the number of 
+log-linear parameters in the maximal model are/is large, which may cause problems with 
+computer memory storage.
+}
 \value{
 
-This function will return an object of class "\code{interstat}" which is a list with the following 
+This function will return an object of class \code{"interstat"} which is a list with the following 
 components:
 
 \item{term}{A vector of term labels for each parameter.}
@@ -56,11 +59,6 @@ components:
 
 The function will only return elements in the above list if \code{prob} > \code{cutoff}.
 
-}
-
-\references{
-Kass, R.E. & Raftery, A.E. (1995) Bayes Factors. \emph{Journal of the American Statistical 
-Association}, \bold{90}, 773--795.
 }
 
 \author{
@@ -79,7 +77,7 @@ set.seed(1)
 data(AOH)
 ## Load AOH data
 
-test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100)
+test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100,prior="UIP")
 ## Starting from maximal model of saturated model do 100 iterations of MCMC
 ## algorithm.
 

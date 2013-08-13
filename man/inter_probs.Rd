@@ -6,7 +6,7 @@ Calculate Posterior Probability of Each Term
 }
 \description{
 This function computes the posterior probability of each 
-term using the MCMC output of "\code{bcct}" and "\code{bict}" objects. 
+term using the MCMC output of \code{"bcct"} and \code{"bict"} objects. 
 }
 \usage{
 inter_probs(object, cutoff = 0.75, n.burnin = 0, thin = 1)
@@ -14,15 +14,13 @@ inter_probs(object, cutoff = 0.75, n.burnin = 0, thin = 1)
 
 \arguments{
   \item{object}{
-An object of class "\code{bcct}" or "\code{bict}".
+An object of class \code{"bcct"} or \code{"bict"}.
 }
   \item{cutoff}{
 An optional argument giving the cutoff posterior probability for displaying posterior 
 summary statistics of the log-linear parameters. Only those log-linear parameters with 
 a posterior probability greater than \code{cutoff} will be returned as part of the output. 
-The default value is 0.75 which corresponds to a Bayes factor of 3 which is the boundary 
-between the evidence being \emph{positive} and \emph{not worth more than a bare mention} 
-(Kass & Raftery, 1995).
+The default value is 0.75.
 }
   \item{n.burnin}{
 An optional argument giving the number of iterations to use as burn-in. 
@@ -35,10 +33,14 @@ thinning.
 }
 }
 \details{
-This function provides a scaled back version of what \code{\link{inter_stats}} provides. 
+This function provides a scaled back version of what \code{\link{inter_stats}} provides.
+
+The use of thinning is recommended when the number of MCMC iterations and/or the number of 
+log-linear parameters in the maximal model are/is large, which may cause problems with 
+computer memory storage.
 }
 \value{
-This function returns an object of class "\code{interprob}" which is a list with the 
+This function returns an object of class \code{"interprob"} which is a list with the 
 following components. 
 
 \item{term}{A vector of term labels.}
@@ -49,11 +51,6 @@ following components.
 
 The function will only return elements in the above list if \code{prob} > \code{cutoff}.
 
-}
-
-\references{
-Kass, R.E. & Raftery, A.E. (1995) Bayes Factors. \emph{Journal of the American Statistical 
-Association}, \bold{90}, 773--795.
 }
 
 \author{
@@ -72,7 +69,7 @@ set.seed(1)
 data(AOH)
 ## Load AOH data
 
-test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100)
+test1<-bcct(formula=y~(alc+hyp+obe)^3,data=AOH,n.sample=100,prior="UIP")
 ## Starting from maximal model of saturated model do 100 iterations of MCMC
 ## algorithm.
 

@@ -1,6 +1,18 @@
 mod_probs <-
 function(object,n.burnin=0,scale=0.1,best=NULL,thin=1){
 
+if(n.burnin<0){
+stop("n.burnin should be positive")}
+if(n.burnin>=length(object$MODEL)){
+stop("n.burnin should be less than the MCMC sample size (n.sample)")}
+if(thin<1){
+stop("thin should be greater than or equal to 1")}
+if(scale<0 | scale>1){
+stop("scale should be between 0 and 1")}
+if(!is.null(best)){
+if(best<=0){
+stop("best should be positive")}}
+
 if(n.burnin>0){
 innerBETA<-object$BETA[-(1:n.burnin),]
 innerMODEL<-object$MODEL[-(1:n.burnin)]} else{

@@ -9,19 +9,21 @@ Given all the sources and the censored source of an incomplete contingency table
 function will find the censored cells. 
 }
 \usage{
-find_cens(sources, cens_source, data, unobs.level = "un", obs.level = "obs")
+find_cens(sources, cens_source, data=NULL, unobs.level = "un", obs.level = "obs")
 }
 
 \arguments{
   \item{sources}{
-An object of class "\code{formula}", which details the sources in the incomplete contingency table.
+An object of class \code{"formula"}, which details the sources in the incomplete contingency table.
 }
   \item{cens_source}{
-An object of class "\code{formula}", which details the source which is subject to censoring in the 
+An object of class \code{"formula"}, which details the source which is subject to censoring in the 
 incomplete contingency table.
 }
   \item{data}{
-An object of class "\code{data.frame}" containing the variables in the model.
+An object of class \code{"data.frame"} (or \code{"table"}) containing the variables in the model. 
+If the model variables are not found in \code{data}, the variables are taken from 
+\code{environment(formula)}, typically the environment from which \code{find_cens} is called.
 }
   \item{unobs.level}{
 The character string used to label the source level corresponding to not observing the 
@@ -39,7 +41,7 @@ that when this source observes an individual that has been observed by at least 
 source, then it is a member of the target population. However those individuals only observed 
 by the censored source contain a mixture of members of the target and non-target populations. This 
 means that the observed cell count acts as an upper bound on the true cell count. For more details 
-on this approach, see Overstall et al (2012) and Overstall & King (2012). This function identifies 
+on this approach, see Overstall et al (2013) and Overstall & King (2013). This function identifies 
 the cells which are censored (i.e. correspond to only being observed by the censored source).
 }
 \value{
@@ -47,12 +49,12 @@ The function will output a numeric vector containing the cell numbers of the cen
 used by the \code{\link{bict}} and \code{\link{bictu}} functions.
 }
 \references{
-Overstall, A.M., King, R., Bird, S.M., Hutchinson, S.J. & Hay, G. (2012) Estimating the 
-Number of People Who Inject Drugs in Scotland using Multi-List Data with Left Censoring. 
-\emph{Technical Report}, University of St Andrews. 
+Overstall, A.M., King, R., Bird, S.M., Hutchinson, S.J. & Hay, G. (2013) Incomplete contingency 
+tables with censored cells with application to estimating the number of people who inject drugs 
+in Scotland. \emph{Technical Report}, University of St Andrews. 
 
-Overstall, A.M. & King, R. (2012) conting: An R package for the Bayesian analysis of 
-complete and incomplete contingency tables. Technical Report, University of St Andrews.
+Overstall, A.M. & King, R. (2013) conting: An R package for the Bayesian analysis of 
+complete and incomplete contingency tables. \emph{Technical Report}, University of St Andrews.
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
