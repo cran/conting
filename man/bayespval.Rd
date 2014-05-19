@@ -28,20 +28,20 @@ thinning.
 }
   \item{statistic}{
 An optional argument giving the discrepancy statistic to use for calculating the Bayesian p-value. It can be one of 
-\code{c("deviance","X2","FreemanTukey")} which correspond to the different statistics: 
-\code{"deviance"} = deviance statistic, \code{"X2"} = Chi-squared statistic, 
-\code{"FreemanTukey"} = Freeman-Tukey statistic. See Overstall & King (2013), and references 
+\code{c("X2","FreemanTukey","deviance")} which correspond to the different statistics: 
+\code{"X2"} = Chi-squared statistic, \code{"FreemanTukey"} = Freeman-Tukey statistic, 
+\code{"deviance"} = deviance statistic. See Overstall & King (2014), and references 
 therein, for descriptions of these statistics.
 }
 }
 
 \details{See Gelman et al (2004, Chapter 6) for more details on Bayesian p-values and see 
-Overstall & King (2013), and references therein, for details of their application to 
+Overstall & King (2014), and references therein, for details of their application to 
 contingency tables.
 
 The use of thinning is recommended when the number of MCMC iterations and/or the number of 
 log-linear parameters in the maximal model are/is large, which may cause problems with 
-computer memory storage.
+comuter memory storage.
 }
 
 \value{
@@ -61,7 +61,7 @@ and their means.}
 \references{
 Gelman, A., Carlin, J.B., Stern, H.S. & Rubin, D.B. (2004) \emph{Bayesian Data Analysis}, 2nd edition, Chapman & Hall.
 
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

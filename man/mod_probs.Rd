@@ -46,7 +46,7 @@ only the probabilities of the "best" models, as defined by the user specifying e
 
 The use of thinning is recommended when the number of MCMC iterations and/or the number of 
 log-linear parameters in the maximal model are/is large, which may cause problems with 
-computer memory storage.
+comuter memory storage.
 }
 \value{
 The function will return an object of class \code{"modprobs"} which is a list containing the following 

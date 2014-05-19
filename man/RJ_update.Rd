@@ -49,7 +49,7 @@ A matrix giving the inverse of the prior variance matrix for the log-linear para
 }
 \details{
 For the original algorithm see Forster et al (2012). For details on its application to log-linear models 
-see Overstall & King (2013), and the references therein.
+see Overstall & King (2014), and the references therein.
 }
 \value{
 The function will return a list with the following components:
@@ -60,7 +60,7 @@ The function will return a list with the following components:
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for generalised linear models and generalised 
 linear mixed models. \emph{Statistics and Computing}, \bold{22}, 107--120.
 
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

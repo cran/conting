@@ -4,7 +4,6 @@
 \title{
 Bayesian Analysis of Complete Contingency Tables
 }
-\encoding{UTF-8}
 \description{
 This function is the workhorse behind \code{\link{bcct}} and \code{\link{bcctu}}.
 }
@@ -54,10 +53,10 @@ A scalar argument giving the probability of performing a null move, i.e. proposi
 current model.
 }
   \item{a}{
-The shape hyperparameter of the Sabanes-Bové & Held prior, see Overstall & King (2013).
+The shape hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014).
 }
   \item{b}{
-The scale hyperparameter of the Sabanes-Bové & Held prior, see Overstall & King (2013).
+The scale hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014).
 }
   \item{progress}{
 Logical argument. If \code{TRUE}, then a progress bar will be displayed.
@@ -74,7 +73,7 @@ to a log-linear parameter which is not present for the current model a zero is r
 
 \item{MODEL}{A vector of length \code{iters} giving the sampled model indicators in hexadecimal form.}
 
-\item{SIG}{A vector of length \code{iters} giving the sampled values for sigma^2 under the Sabanes-Bové & Held prior. If the 
+\item{SIG}{A vector of length \code{iters} giving the sampled values for sigma^2 under the Sabanes-Bove & Held prior. If the 
 unit information prior is used then the components of this vector will be one.}
 
 \item{rj_acc}{A binary vector of the same length as the number of reversible jump moves attempted. A 0 indicates 
@@ -86,7 +85,7 @@ that the proposal was rejected, and a 1 that the proposal was accepted.}
 }
 
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for the Bayesian analysis of 
+Overstall, A.M. & King, R. (2014) conting: An R package for the Bayesian analysis of 
 complete and incomplete contingency tables. \emph{Technical Report}, University of St Andrews.
 }
 

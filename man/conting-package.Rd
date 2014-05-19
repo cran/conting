@@ -15,8 +15,8 @@ populations.
 \tabular{ll}{
 Package: \tab conting\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2013-08-13\cr
+Version: \tab 1.2\cr
+Date: \tab 2013-05-19\cr
 License: \tab GPL-2\cr
 }
 For the Bayesian analysis of complete contingency tables the key function is \code{\link{bcct}} 
@@ -28,7 +28,7 @@ which uses MCMC methods to generate a sample from the joint posterior distributi
 indicator and the missing, and, possibly, censored cell entries. Further MCMC iterations can be performed 
 by using \code{\link{bictu}}.
 
-In both cases see Overstall & King (2013), and the references therein, for details on the statistical 
+In both cases see Overstall & King (2014), and the references therein, for details on the statistical 
 and computational methods, as well as detailed examples.
 
 }
@@ -38,7 +38,7 @@ Antony M. Overstall \email{antony@mcs.st-and.ac.uk}
 Maintainer: Antony M. Overstall \email{antony@mcs.st-and.ac.uk}
 }
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

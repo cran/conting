@@ -4,7 +4,7 @@
 \title{
 Compute Posterior Summary Statistics for (Sub-) Models
 }
-\encoding{UTF-8}
+
 \description{
 This function computes posterior summary statistics for (sub-) models 
 using the MCMC output of \code{"bcct"} and \code{"bict"} objects. 
@@ -45,9 +45,9 @@ The default value is 0.95.
 }
   \item{statistic}{
 An optional argument giving the discrepancy statistic to use for calculating the Bayesian p-value. It can be one of 
-\code{c("deviance","X2","FreemanTukey")} which correspond to the different statistics: 
-\code{"deviance"} = deviance statistic, \code{"X2"} = Chi-squared statistic, 
-\code{"FreemanTukey"} = Freeman-Tukey statistic. See Overstall & King (2013), and references 
+\code{c("X2","FreemanTukey","deviance")} which correspond to the different statistics: 
+\code{"X2"} = Chi-squared statistic, \code{"FreemanTukey"} = Freeman-Tukey statistic, 
+\code{"deviance"} = deviance statistic. See Overstall & King (2014), and references 
 therein, for descriptions of these statistics.
 }
 }
@@ -57,7 +57,7 @@ after burn-in, then an error message will be returned.
 
 The use of thinning is recommended when the number of MCMC iterations and/or the number of 
 log-linear parameters in the maximal model are/is large, which may cause problems with 
-computer memory storage.
+comuter memory storage.
 }
 \value{
 This function will return an object of class \code{"submod"} which is a list with the following 
@@ -86,7 +86,7 @@ interest.
 \item{BETA}{A matrix containing the sampled values of the log-linear parameters, where the 
 number of columns is the number of log-linear parameters in the model of interest.} 
 
-\item{SIG}{A vector containing the sampled values of sigma^2 under the Sabanes-Bové & Held 
+\item{SIG}{A vector containing the sampled values of sigma^2 under the Sabanes-Bove & Held 
 prior. If the unit information prior is used then the components of this vector will be one.} 
 
 If \code{object} is of class \code{"bict"}, then \code{sub_model} will also return the following 
@@ -96,7 +96,7 @@ component.
 cell counts, where k is the total number of missing and censored cell counts.}
 }
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

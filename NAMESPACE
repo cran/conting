@@ -1,1 +1,5 @@
+import(mvtnorm, tseries, coda)
+importFrom(gtools, combinations)
+importFrom(BMS, bin2hex)
+importFrom(BMS, hex2bin)
 exportPattern("^[[:alpha:]]+")

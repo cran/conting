@@ -46,11 +46,11 @@ A factor with levels \code{Young} \code{Old} indicating age (\code{Young} = <35 
 Note that the PWID observed by source \code{S4}, the HCV database, are not necessarily current 
 PWID. They are people who have a history of drug use. Therefore the count in the cell 
 corresponding to only being observed by the HCV database is an overcount. Overstall et al 
-(2013) use a modelling approach whereby the count in the cell corresponding to only being 
+(2014) use a modelling approach whereby the count in the cell corresponding to only being 
 observed by the HCV database is missing and the observed value acts as an upper bound. For 
 more details on the dataset see King et al (2013).
 
-For details on the function \code{\link{bict}} applied to this data, see Overstall & King (2013).
+For details on the function \code{\link{bict}} applied to this data, see Overstall & King (2014).
 }
 \source{
 King, R., Bird, S. M., Overstall, A. M., Hay, G. & Hutchinson, S. J. (2013) Injecting drug
@@ -58,11 +58,11 @@ users in Scotland, 2006: Listing, number, demography, and opiate-related death-r
 \emph{Addiction Research and Theory}, \bold{21}, 235-246.
 }
 \references{
-Overstall, A.M., King, R., Bird, S.M., Hutchinson, S.J. & Hay, G. (2013) Incomplete contingency 
+Overstall, A.M., King, R., Bird, S.M., Hutchinson, S.J. & Hay, G. (2014) Incomplete contingency 
 tables with censored cells with application to estimating the number of people who inject drugs 
-in Scotland. \emph{Technical Report}, University of St Andrews. 
+in Scotland. \emph{Statistics in Medicine}, \bold{33}, 1564--1579.
 
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

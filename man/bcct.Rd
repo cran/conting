@@ -4,7 +4,6 @@
 \title{
 Bayesian Analysis of Complete Contingency Tables
 }
-\encoding{UTF-8}
 \description{
 These functions implement a Bayesian analysis of complete contingency tables. This is 
 accomplished using an MCMC algorithm where the null moves are performed using 
@@ -37,7 +36,7 @@ model. If the model variables are not found in \code{data}, the variables are ta
 A numeric scalar giving the number of (additional, in the case of \code{bcctu}) MCMC iterations to perform.
 }
   \item{prior}{An optional argument giving the prior to be used in the analysis. It can be one of 
-\code{c("UIP","SBH")}, where \code{"UIP"} = unit information prior; and \code{"SBH"} = Sabanes-Bové & Held prior. The 
+\code{c("UIP","SBH")}, where \code{"UIP"} = unit information prior; and \code{"SBH"} = Sabanes-Bove & Held prior. The 
 default value is \code{"SBH"}.
 }
 
@@ -53,7 +52,7 @@ implied by the argument \code{start.formula}. If \code{NULL} (the default) the s
 posterior mode under the maximal model.
 }
   \item{start.sig}{
-An optional argument giving the starting value of sigma^2 (under the Sabanes-Bové & Held prior) for the 
+An optional argument giving the starting value of sigma^2 (under the Sabanes-Bove & Held prior) for the 
 MCMC algorithm when the argument of prior is \code{"SBH"}. If \code{NULL} (the default) the starting 
 value will be one.
 }
@@ -79,11 +78,11 @@ An optional scalar argument giving the probability of performing a null move in 
 algorithm, i.e. proposing a move to the current model. The default value is 0.5.
 }
   \item{a}{
-The shape hyperparameter of the Sabanes-Bové & Held prior, see Overstall & King (2013). The default value 
+The shape hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014). The default value 
 is 0.001.
 }
   \item{b}{
-The scale hyperparameter of the Sabanes-Bové & Held prior, see Overstall & King (2013). The default value 
+The scale hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014). The default value 
 is 0.001.
 }
   \item{progress}{
@@ -93,15 +92,15 @@ Logical argument. If \code{TRUE}, then a progress bar will be displayed. The def
 }
 \details{
 For identifiability, the parameters are constrained. The \code{\link{conting-package}} uses sum-to-zero constraints. 
-See Overstall & King (2013), and the references therein, for more details. 
+See Overstall & King (2014), and the references therein, for more details. 
 
 The Metropolis-Hastings algorithm employed is the iterated weighted least squares method for 
 generalised linear models (GLMs) proposed by Gamerman (1997). The reversible jump algorithm employed is 
 that orthogonal projections method for GLMs proposed by Forster et al (2012). For details on these 
-methods applied to log-linear models see Overstall & King (2013), and the references therein. 
+methods applied to log-linear models see Overstall & King (2014), and the references therein. 
 
-For details on the unit information and Sabanes-Bové & Held priors for generalised linear models see Ntzoufras 
-et al (2003) and Sabanes-Bové & Held (2011), respectively. See Overstall & King (2013), and the references therein, 
+For details on the unit information and Sabanes-Bove & Held priors for generalised linear models see Ntzoufras 
+et al (2003) and Sabanes-Bove & Held (2011), respectively. See Overstall & King (2014), and the references therein, 
 for their application to log-linear models and contingency tables.
 
 }
@@ -114,7 +113,7 @@ to a log-linear parameter which is not present for the current model a zero is r
 
 \item{MODEL}{A vector of length \code{n.sample} giving the sampled model indicators in hexadecimal format.}
 
-\item{SIG}{A vector of length \code{n.sample} giving the sampled values for sigma^2 under the Sabanes-Bové & Held prior. If the 
+\item{SIG}{A vector of length \code{n.sample} giving the sampled values for sigma^2 under the Sabanes-Bove & Held prior. If the 
 unit information prior is used then the components of this vector will be one.}
 
 \item{rj_acc}{A binary vector of the same length as the number of reversible jump moves attempted. A 0 indicates 
@@ -149,7 +148,7 @@ The argument \code{b}.
 }
 }
 \references{
-Sabanes-Bové, D. & Held, L. (2011) Hyper-g priors for generalized linear models. \emph{Bayesian
+Sabanes-Bove, D. & Held, L. (2011) Hyper-g priors for generalized linear models. \emph{Bayesian
 Analysis}, \bold{6}, 387--410.
 
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for generalised linear models and generalised 
@@ -162,7 +161,7 @@ Nztoufras, I., Dellaportas, P. & Forster, J.J. (2003) Bayesian variable and link
 determination for generalised linear models. \emph{Journal of Statistical Planning and 
 Inference}, \bold{111}, 165--180.
 
-Overstall, A.M. & King, R. (2012) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }
@@ -250,7 +249,7 @@ summary(test1)
 #
 #Bayesian p-value =  0.28
 
-## For more examples see Overstall & King (2013).
+## For more examples see Overstall & King (2014).
 
 
 }

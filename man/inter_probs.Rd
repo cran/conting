@@ -37,7 +37,7 @@ This function provides a scaled back version of what \code{\link{inter_stats}} p
 
 The use of thinning is recommended when the number of MCMC iterations and/or the number of 
 log-linear parameters in the maximal model are/is large, which may cause problems with 
-computer memory storage.
+comuter memory storage.
 }
 \value{
 This function returns an object of class \code{"interprob"} which is a list with the 

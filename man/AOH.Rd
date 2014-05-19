@@ -32,14 +32,14 @@ A factor with levels \code{yes} \code{no} indicating the classification of hyper
 These data are from a study in Western Australia. The study copied a larger study 
 from USA. See Knuiman & Speed (1988) for more details.
 
-For details on the function \code{\link{bcct}} applied to these data, see Overstall & King (2013).
+For details on the function \code{\link{bcct}} applied to these data, see Overstall & King (2014).
 }
 \source{
 Knuiman, M.W. & Speed, T.P. (1988) Incorporating Prior Information into the 
 Analysis of Contingency Tables. \emph{Biometrics}, \bold{44}, 1061--1071. 
 }
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

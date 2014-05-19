@@ -34,7 +34,7 @@ intervals for the total population size. The default value is 0.95.
 \details{
 The use of thinning is recommended when the number of MCMC iterations and/or the number of 
 log-linear parameters in the maximal model are/is large, which may cause problems with 
-computer memory storage.
+comuter memory storage.
 }
 
 \value{

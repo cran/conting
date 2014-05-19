@@ -4,7 +4,6 @@
 \title{
 Risk Factors for Coronary Heart Disease: A Complete 2^6 Table
 }
-\encoding{UTF-8}
 \description{
 1841 men are cross-classified according to six risk factors for 
 coronary heart disease: smoking (\code{A}; 2 levels), strenuous mental 
@@ -40,18 +39,18 @@ A factor with levels \code{yes} \code{no} indicating a family anamnesis of coron
 }
 }}
 \details{
-For more details on this data see Edwards & Havránek (1985).
+For more details on this data see Edwards & Havranek (1985).
 
 For details on the function \code{\link{bcct}} applied to this data, see Overstall 
-& King (2013).
+& King (2014).
 }
 
 \source{
-Edwards, D. & Havránek, T. (1985) A fast procedure for model search 
+Edwards, D. & Havranek, T. (1985) A fast procedure for model search 
 in multidimensional contingency tables. \emph{Biometrika}, \bold{72}, 339--351.
 }
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

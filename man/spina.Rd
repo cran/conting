@@ -36,14 +36,14 @@ A factor with levels \code{afro-american} \code{caucasian} code{other} indicatin
 \details{
 See Madigan & York (1997), and the references therin, for more details on the study.
 
-For details on the function \code{\link{bict}} applied to this data, see Overstall & King (2013).
+For details on the function \code{\link{bict}} applied to this data, see Overstall & King (2014).
 }
 \source{
 Madigan, D. & York, J.C. (1997) Methods for Estimation of the Size of a Closed Population. 
 \emph{Biometrika}, \bold{84}, 19--31.
 }
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }

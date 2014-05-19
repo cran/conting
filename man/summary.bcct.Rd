@@ -7,7 +7,7 @@
 \title{
 Summary of \code{bcct} and \code{bict} Objects
 }
-\encoding{UTF-8}
+
 \description{
 These functions produce summaries of objects of class \code{"bcct"} and \code{"bict"}. They also control 
 how these summaries are printed.
@@ -50,9 +50,9 @@ The default value is 0.75.
 }
   \item{statistic}{
 An optional argument giving the discrepancy statistic to use for calculating the Bayesian p-value. It can be one of 
-\code{c("deviance","X2","FreemanTukey")} which correspond to the different statistics: 
-\code{"deviance"} = deviance statistic, \code{"X2"} = Chi-squared statistic, 
-\code{"FreemanTukey"} = Freeman-Tukey statistic. See Overstall & King (2013), and references 
+\code{c("X2","FreemanTukey","deviance")} which correspond to the different statistics: 
+\code{"X2"} = Chi-squared statistic, \code{"FreemanTukey"} = Freeman-Tukey statistic, 
+\code{"deviance"} = deviance statistic. See Overstall & King (2014), and references 
 therein, for descriptions of these statistics.
 }
   \item{best}{
@@ -86,7 +86,7 @@ functions, see the associated help files.
 
 The use of thinning is recommended when the number of MCMC iterations and/or the number of 
 log-linear parameters in the maximal model are/is large, which may cause problems with 
-computer memory storage.
+comuter memory storage.
 }
 
 \value{
@@ -99,7 +99,7 @@ to a log-linear parameter which is not present for the current model a zero is r
 
 \item{MODEL}{A vector of length \code{n.sample} giving the samlpled model indicators in hexadecimal format.}
 
-\item{SIG}{A vector of length \code{n.sample} giving the sampled values for sigma^2 under the Sabanes-Bové & Held prior. If the 
+\item{SIG}{A vector of length \code{n.sample} giving the sampled values for sigma^2 under the Sabanes-Bove & Held prior. If the 
 unit information prior is used then the components of this vector will be one.}
 
 \item{rj_acc}{A binary vector of the same length as the number of reversible jump moves attempted. A 0 indicates 
@@ -147,7 +147,7 @@ and (in the case of \code{\link{print.sbict}}) posterior summary statistics for 
 }
 
 \references{
-Overstall, A.M. & King, R. (2013) conting: An R package for Bayesian analysis of
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
 complete and incomplete contingency tables. \emph{Technical Report}, University 
 of St Andrews, UK.
 }
