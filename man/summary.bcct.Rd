@@ -148,8 +148,8 @@ and (in the case of \code{\link{print.sbict}}) posterior summary statistics for 
 
 \references{
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 
 \author{

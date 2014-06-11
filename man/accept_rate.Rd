@@ -30,7 +30,7 @@ following components.
 \references{
 Brooks, S.P., Giudici, P., & Roberts, G.O. (2003) Efficient construction of reversible jump 
 Markov chain Monte Carlo proposal distributions. \emph{Journal of the Royal Statistical 
-Society, Series B}, \bold{65}, 3--55.
+Society, Series B}, \bold{65 (1)}, 3--55.
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.

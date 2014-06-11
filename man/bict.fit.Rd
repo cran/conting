@@ -99,9 +99,11 @@ that the proposal was rejected, and a 1 that the proposal was accepted.}
 }
 
 \references{
-Overstall, A.M. & King, R. (2014) conting: An R package for the Bayesian analysis of 
-complete and incomplete contingency tables. \emph{Technical Report}, University of St Andrews.
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
+
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
 }

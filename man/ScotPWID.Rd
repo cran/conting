@@ -55,16 +55,16 @@ For details on the function \code{\link{bict}} applied to this data, see Oversta
 \source{
 King, R., Bird, S. M., Overstall, A. M., Hay, G. & Hutchinson, S. J. (2013) Injecting drug
 users in Scotland, 2006: Listing, number, demography, and opiate-related death-rates.
-\emph{Addiction Research and Theory}, \bold{21}, 235-246.
+\emph{Addiction Research and Theory}, \bold{21 (3)}, 235-246.
 }
 \references{
 Overstall, A.M., King, R., Bird, S.M., Hutchinson, S.J. & Hay, G. (2014) Incomplete contingency 
 tables with censored cells with application to estimating the number of people who inject drugs 
-in Scotland. \emph{Statistics in Medicine}, \bold{33}, 1564--1579.
+in Scotland. \emph{Statistics in Medicine}, \bold{33 (9)}, 1564--1579.
 
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \examples{
 data(ScotPWID)

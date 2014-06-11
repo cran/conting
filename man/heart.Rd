@@ -47,12 +47,12 @@ For details on the function \code{\link{bcct}} applied to this data, see Oversta
 
 \source{
 Edwards, D. & Havranek, T. (1985) A fast procedure for model search 
-in multidimensional contingency tables. \emph{Biometrika}, \bold{72}, 339--351.
+in multidimensional contingency tables. \emph{Biometrika}, \bold{72 (2)}, 339--351.
 }
 \references{
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \examples{
 data(heart)

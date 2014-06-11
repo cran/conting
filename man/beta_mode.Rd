@@ -55,19 +55,21 @@ linear parameters.}
 
 \references{
 Sabanes-Bove, D. & Held, L. (2011) Hyper-g priors for generalized linear models. \emph{Bayesian
-Analysis}, \bold{6}, 387--410.
+Analysis}, \bold{6 (3)}, 387--410.
 
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for 
 generalised linear models and generalised linear mixed models. \emph{Statistics and Computing}, 
-\bold{22}, 107--120.
+\bold{22 (1)}, 107--120.
 
 Nztoufras, I., Dellaportas, P. & Forster, J.J. (2003) Bayesian variable and link 
 determination for generalised linear models. \emph{Journal of Statistical Planning and 
-Inference}, \bold{111}, 165--180.
+Inference}, \bold{111 (1)}, 165--180.
 
-Overstall, A.M. & King, R. (2014) conting: An R package for the Bayesian analysis of 
-complete and incomplete contingency tables. \emph{Technical Report}, University of St Andrews.
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
+
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
 }

@@ -63,7 +63,7 @@ depending on the type of move proposed.}
 }
 \references{
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for generalised linear models and generalised 
-linear mixed models. \emph{Statistics and Computing}, \bold{22}, 107--120.
+linear mixed models. \emph{Statistics and Computing}, \bold{22 (1)}, 107--120.
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.

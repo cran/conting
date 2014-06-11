@@ -38,11 +38,11 @@ parameters.
 }
 \references{
 Gamerman, D. (1997) Sampling from the posterior distribution in generalised linear mixed
-models. \emph{Statistics and Computing}, \bold{7}, 57--68.
+models. \emph{Statistics and Computing}, \bold{7 (1)}, 57--68.
 
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.

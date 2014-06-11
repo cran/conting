@@ -51,10 +51,11 @@ used by the \code{\link{bict}} and \code{\link{bictu}} functions.
 \references{
 Overstall, A.M., King, R., Bird, S.M., Hutchinson, S.J. & Hay, G. (2014) Incomplete contingency 
 tables with censored cells with application to estimating the number of people who inject drugs 
-in Scotland. \emph{Statistics in Medicine}, \bold{33}, 1564--1579.
+in Scotland. \emph{Statistics in Medicine}, \bold{33 (9)}, 1564--1579.
 
-Overstall, A.M. & King, R. (2014) conting: An R package for the Bayesian analysis of 
-complete and incomplete contingency tables. \emph{Technical Report}, University of St Andrews.
+Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.

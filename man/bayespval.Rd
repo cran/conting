@@ -62,8 +62,8 @@ and their means.}
 Gelman, A., Carlin, J.B., Stern, H.S. & Rubin, D.B. (2004) \emph{Bayesian Data Analysis}, 2nd edition, Chapman & Hall.
 
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.

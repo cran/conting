@@ -40,12 +40,12 @@ For details on the function \code{\link{bict}} applied to this data, see Oversta
 }
 \source{
 Madigan, D. & York, J.C. (1997) Methods for Estimation of the Size of a Closed Population. 
-\emph{Biometrika}, \bold{84}, 19--31.
+\emph{Biometrika}, \bold{84 (1)}, 19--31.
 }
 \references{
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \examples{
 data(spina)

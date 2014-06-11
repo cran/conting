@@ -58,11 +58,11 @@ The function will return a list with the following components:
 }
 \references{
 Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for generalised linear models and generalised 
-linear mixed models. \emph{Statistics and Computing}, \bold{22}, 107--120.
+linear mixed models. \emph{Statistics and Computing}, \bold{22 (1)}, 107--120.
 
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \author{
 Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.

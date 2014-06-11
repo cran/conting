@@ -15,8 +15,8 @@ populations.
 \tabular{ll}{
 Package: \tab conting\cr
 Type: \tab Package\cr
-Version: \tab 1.2\cr
-Date: \tab 2013-05-19\cr
+Version: \tab 1.3\cr
+Date: \tab 2014-06-11\cr
 License: \tab GPL-2\cr
 }
 For the Bayesian analysis of complete contingency tables the key function is \code{\link{bcct}} 
@@ -39,8 +39,8 @@ Maintainer: Antony M. Overstall \email{antony@mcs.st-and.ac.uk}
 }
 \references{
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 
 \keyword{ package }

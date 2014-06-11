@@ -36,12 +36,12 @@ For details on the function \code{\link{bcct}} applied to these data, see Overst
 }
 \source{
 Knuiman, M.W. & Speed, T.P. (1988) Incorporating Prior Information into the 
-Analysis of Contingency Tables. \emph{Biometrics}, \bold{44}, 1061--1071. 
+Analysis of Contingency Tables. \emph{Biometrics}, \bold{44 (4)}, 1061--1071. 
 }
 \references{
 Overstall, A.M. & King, R. (2014) conting: An R package for Bayesian analysis of
-complete and incomplete contingency tables. \emph{Technical Report}, University 
-of St Andrews, UK.
+complete and incomplete contingency tables. \emph{Journal of Statistical Software}, \bold{58 (7)}, 
+1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \examples{
 data(AOH)
