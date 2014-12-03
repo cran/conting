@@ -29,7 +29,7 @@ This function will print out the posterior model probability of the
 }
 
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 \note{For an example see \code{\link{mod_probs}}.}
 

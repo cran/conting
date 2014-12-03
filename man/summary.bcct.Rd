@@ -153,7 +153,7 @@ complete and incomplete contingency tables. \emph{Journal of Statistical Softwar
 }
 
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 \note{
 For examples see the help files for \code{\link{bcct}} and \code{\link{bict}}.

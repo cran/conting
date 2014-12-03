@@ -66,7 +66,7 @@ Forster, J.J., Gill, R.C. & Overstall, A.M. (2012) Reversible jump methods for g
 linear mixed models. \emph{Statistics and Computing}, \bold{22 (1)}, 107--120.
 }
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 \note{
 This function will not typically be called by the user.

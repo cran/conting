@@ -35,7 +35,7 @@ censored cells.
 }
 
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 
 \note{For examples see \code{\link{bcct}} and \code{\link{bict}}.}

@@ -29,7 +29,7 @@ to the argument \code{cutoff}).
 }
 
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 \note{For an example see \code{\link{inter_probs}}.}
 

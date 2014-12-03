@@ -65,7 +65,7 @@ complete and incomplete contingency tables. \emph{Journal of Statistical Softwar
 1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 \note{
 This function will not typically be called by the user.

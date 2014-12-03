@@ -34,7 +34,7 @@ in the maximal model, indicating which parameters are present in the model conve
 }
 
 \author{
-Antony M. Overstall \email{antony@mcs.st-and.ac.uk}.
+Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
 }
 \note{
 This function will not typically be called by the user.
