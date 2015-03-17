@@ -1,5 +1,5 @@
-a6967f8172d6f9eb3d73e0b5150ebfbf *DESCRIPTION
-4eb234dfaf800c03afa81c02796821bd *NAMESPACE
+103000b733f039c5dc499d9d26828f9c *DESCRIPTION
+5898d6f35b23d055ac015ae0d6bcb1b2 *NAMESPACE
 9071b89c46380a7af6be8fae2db00948 *R/RJ_update.R
 def339b59e64204e9db01335b77ac9e8 *R/accept_rate.R
 e3f610f6d31b1bc65164baf540514209 *R/add_term.R
@@ -39,10 +39,10 @@ ebd49330a88bba6d4cc5cbfe048379ea *R/print.submod.R
 a87c0874595f4b0e9c82c46433a2d942 *R/summary.bcct.R
 25d8d4dc32f86840812605ab3a2068c5 *R/summary.bict.R
 84ed36115620defbe585207a53a9c951 *R/total_pop.R
-fcd0b8818ba678d708f10995250373b7 *data/AOH.rda
-9964486cb43abcb218e141366acec5b3 *data/ScotPWID.rda
-df0a075ec145b58833564aa0b9b0e3ba *data/heart.rda
-57c75ad48d80847eae9924d06770a3bc *data/spina.rda
+5d5bbc72bf14772825619cf8d3afc1a7 *data/AOH.rda
+8de3b728a3dacb3d90f7da68e09090e2 *data/ScotPWID.rda
+f32945364a520d8435801b7ce94499bd *data/heart.rda
+d9cfabe86771a3a2bf7dcc58d2eabf75 *data/spina.rda
 551b319d5c059d2714af405e6e005df9 *inst/CITATION
 da54c697af3c2d465145cf4d78f89732 *man/AOH.Rd
 a7ef0b144b430f86d7c57de815e75698 *man/RJ_update.Rd
@@ -55,7 +55,7 @@ ad4407056e82e020f0f404382f97c9da *man/bcct.fit.Rd
 2066618b2c7e1a2de0768407d486f2fa *man/beta_mode.Rd
 9670f314af585ad547c00c072772a831 *man/bict.Rd
 ba14f4d22009d53888b7b26a043c7a9a *man/bict.fit.Rd
-cb5fe47d65abb68336846692d9bf5516 *man/conting-package.Rd
+2ad151600ec77bd296c2cf3f01c972a8 *man/conting-package.Rd
 e7a8084279cee2c8cadc2a660d05c5ea *man/find_cens.Rd
 6335a3dcae17b4f64942f74ec5214e77 *man/formula2index.Rd
 8ac844d7f724081448928f8630adace5 *man/heart.Rd
