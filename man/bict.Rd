@@ -90,11 +90,13 @@ algorithm, i.e. proposing a move to the current model. The default value is 0.5.
 }
   \item{a}{
 The shape hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014). The default 
-value is 0.001.
+value is 0.001. A value of \code{a = -1} gives the Gelman prior (Gelman, 2006), i.e. a uniform prior 
+on the standard deviation.
 }
   \item{b}{
 The scale hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014). The default 
-value is 0.001.
+value is 0.001. A value of \code{b = 0} gives the Gelman prior (Gelman, 2006), i.e. a uniform prior 
+on the standard deviation.
 }
   \item{progress}{
 Logical argument. If \code{TRUE}, then a progress bar will be displayed. The default value is 
@@ -215,6 +217,9 @@ linear mixed models. \emph{Statistics and Computing}, \bold{22 (1)}, 107--120.
 
 Gamerman, D. (1997) Sampling from the posterior distribution in generalised linear mixed
 models. \emph{Statistics and Computing}, \bold{7 (1)}, 57--68.
+
+Gelman, A. (2006) Prior distributions for variance parameters in hierarchical models(Comment
+on Article by Browne and Draper). \emph{Bayesian Analysis}, \bold{1 (3)}, 515--534.
 
 Nztoufras, I., Dellaportas, P. & Forster, J.J. (2003) Bayesian variable and link 
 determination for generalised linear models. \emph{Journal of Statistical Planning and 

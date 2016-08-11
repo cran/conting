@@ -1,6 +1,8 @@
 \name{bcct}
 \alias{bcct}
 \alias{bcctu}
+\alias{bcctsubset}
+\alias{bcctsubsetu}
 \title{
 Bayesian Analysis of Complete Contingency Tables
 }
@@ -12,6 +14,9 @@ reversible jump algorithm.
 
 \code{bcct} should be used initially, and \code{bcctu} should be used to do additional 
 MCMC iterations, if required.
+
+\code{bcctsubset} and \code{bcctsubsetu} operate on a subset of models.
+
 }
 \usage{
 bcct(formula, data, n.sample, prior = "SBH", start.formula = NULL, 
@@ -19,12 +24,22 @@ start.beta = NULL, start.sig = NULL, save = 0, name = NULL, null.move.prob=0.5,
 a = 0.001, b = 0.001, progress = FALSE)
 
 bcctu(object, n.sample, save = NULL, name = NULL, progress = FALSE)
+
+bcctsubset(subsetformula, data, n.sample, prior = "SBH", start.formula = NULL, 
+start.beta = NULL, start.sig = NULL, save = 0, name = NULL, null.move.prob=0.5, 
+a = 0.001, b = 0.001, progress = FALSE)
+
+bcctsubsetu(object, n.sample, save = NULL, name = NULL, progress = FALSE)
+
 }
 
 \arguments{
   
   \item{formula}{An object of class \code{"formula"}: a symbolic description of the 
 maximal model.}
+
+  \item{subsetformula}{A list with elements of class \code{"formula"}: symbolic description of the 
+subset of models. The first element in the list should be the maximal model.}
 
   \item{object}{An object of class \code{"bcct"} produced as a previous call to \code{bcct} or \code{bcctu}.}
 
@@ -59,11 +74,11 @@ value will be one.
   \item{save}{
 An optional argument for saving the MCMC output mid-algorithm. 
 
-For \code{bcct}, if positive, the function will save the MCMC output to external text 
+For \code{bcct} and \code{bcctsubset}, if positive, the function will save the MCMC output to external text 
 files every \code{save} iterations. If zero (the default), the function will not save 
 the MCMC output to external files. 
 
-For \code{bcctu}, if non-\code{NULL}, the function will save the MCMC output to external text 
+For \code{bcctu} and \code{bcctsubsetu}, if non-\code{NULL}, the function will save the MCMC output to external text 
 files every \code{save} iterations. If \code{NULL} (the default), it will inherit the value of 
 \code{save} from the previous call to \code{bcct} or \code{bcctu}.
 }
@@ -79,11 +94,13 @@ algorithm, i.e. proposing a move to the current model. The default value is 0.5.
 }
   \item{a}{
 The shape hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014). The default value 
-is 0.001.
+is 0.001. A value of \code{a = -1} gives the Gelman prior (Gelman, 2006), i.e. a uniform prior on the 
+standard deviation.
 }
   \item{b}{
 The scale hyperparameter of the Sabanes-Bove & Held prior, see Overstall & King (2014). The default value 
-is 0.001.
+is 0.001. A value of \code{b = 0} gives the Gelman prior (Gelman, 2006), i.e. a uniform prior on the 
+standard deviation.
 }
   \item{progress}{
 Logical argument. If \code{TRUE}, then a progress bar will be displayed. The default value is 
@@ -146,6 +163,8 @@ The argument \code{a}.
   \item{b}{
 The argument \code{b}.
 }
+  \item{subset.index}{
+Model indicators (in hexidecimal format) of the subset of models.}
 }
 \references{
 Sabanes-Bove, D. & Held, L. (2011) Hyper-g priors for generalized linear models. \emph{Bayesian
@@ -156,6 +175,9 @@ linear mixed models. \emph{Statistics and Computing}, \bold{22 (1)}, 107--120.
 
 Gamerman, D. (1997) Sampling from the posterior distribution in generalised linear mixed
 models. \emph{Statistics and Computing}, \bold{7 (1)}, 57--68.
+
+Gelman, A. (2006) Prior distributions for variance parameters in hierarchical models(Comment
+on Article by Browne and Draper). \emph{Bayesian Analysis}, \bold{1 (3)}, 515--534.
 
 Nztoufras, I., Dellaportas, P. & Forster, J.J. (2003) Bayesian variable and link 
 determination for generalised linear models. \emph{Journal of Statistical Planning and 

@@ -1,16 +1,21 @@
 \name{RJ_update}
 \alias{RJ_update}
+\alias{RJ_update_swap}
 
 \title{
 Reversible Jump Algorithm
 }
 \description{
-This function implements one iteration of the orthogonal projection reversible jump algorithm for generalised 
-linear models proposed by Forster et al (2012) applied to log-linear models.
+These functions implement one iteration of the orthogonal projection reversible jump algorithm for generalised 
+linear models proposed by Forster et al (2012) applied to log-linear models with and without swap moves.
 }
 \usage{
+RJ_update_swap(prop.index, curr.index, curr.beta, eta.hat, curr.y, big.X, 
+proposal.probs, i.prop.prior.var, i.curr.prior.var)
+
 RJ_update(prop.index, curr.index, curr.beta, eta.hat, curr.y, big.X, 
 proposal.probs, i.prop.prior.var, i.curr.prior.var)
+
 }
 
 \arguments{
@@ -50,6 +55,8 @@ A matrix giving the inverse of the prior variance matrix for the log-linear para
 \details{
 For the original algorithm see Forster et al (2012). For details on its application to log-linear models 
 see Overstall & King (2014), and the references therein.
+
+\code{RJ_update_swap} performs birth/death and swap moves whereas \code{RJ_update} just performs birth/death moves.
 }
 \value{
 The function will return a list with the following components:

@@ -1,20 +1,27 @@
 \name{bcct.fit}
 \alias{bcct.fit}
+\alias{bcctsubset.fit}
 
 \title{
 Bayesian Analysis of Complete Contingency Tables
 }
 \description{
-This function is the workhorse behind \code{\link{bcct}} and \code{\link{bcctu}}.
+These functions are the workhorses behind \code{\link{bcct}}, \code{\link{bcctu}}, \code{\link{bcctsubset}}, and \code{\link{bcctsubsetu}}.
 }
 \usage{
 bcct.fit(priornum, maximal.mod, IP, eta.hat, ini.index, ini.beta, ini.sig, 
 iters, save, name, null.move.prob, a, b, progress)
+
+bcctsubset.fit(priornum, subset.index, maximal.mod, IP, eta.hat, ini.index, 
+ini.beta, ini.sig, iters, save, name, null.move.prob, a, b, progress)
 }
 
 \arguments{
   \item{priornum}{
 A numeric scalar indicating which prior is to be used: 1 = \code{"UIP"}, 2 = \code{"SBH"}.
+}
+  \item{subset.index}{
+A matrix where each row gives the index for each model in the subset of models under consideration. 
 }
   \item{maximal.mod}{
 An object of class \code{"glm"} giving the fit of the maximal model.
