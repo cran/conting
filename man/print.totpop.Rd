@@ -29,7 +29,7 @@ density interval for the total population size.
 }
 
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 \note{For an example see \code{\link{total_pop}}.}
 

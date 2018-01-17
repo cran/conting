@@ -62,7 +62,7 @@ The function will only return elements in the above list if \code{prob} > \code{
 }
 
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 \seealso{
 \code{\link{bcct}},

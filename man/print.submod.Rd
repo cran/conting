@@ -34,7 +34,7 @@ population size, conditional on the model of interest.
 
 }
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 \note{For an example see \code{\link{sub_model}}.}
 

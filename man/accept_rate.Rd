@@ -33,7 +33,7 @@ Markov chain Monte Carlo proposal distributions. \emph{Journal of the Royal Stat
 Society, Series B}, \bold{65 (1)}, 3--55.
 }
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 
 \seealso{

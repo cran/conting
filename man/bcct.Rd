@@ -188,7 +188,7 @@ complete and incomplete contingency tables. \emph{Journal of Statistical Softwar
 1--27. \url{http://www.jstatsoft.org/v58/i07/}
 }
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 \note{
 These functions are wrappers for \code{\link{bcct.fit}}.

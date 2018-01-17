@@ -234,7 +234,7 @@ tables with censored cells with application to estimating the number of people w
 in Scotland. \emph{Statistics in Medicine}, \bold{33 (9)}, 1564--1579.
 }
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 \note{
 These functions are wrappers for \code{\link{bict.fit}}.

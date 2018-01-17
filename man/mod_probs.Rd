@@ -61,7 +61,7 @@ and \code{prob}; giving the posterior model probability.}
 }
 
 \author{
-Antony M. Overstall \email{Antony.Overstall@glasgow.ac.uk}.
+Antony M. Overstall \email{A.M.Overstall@soton.ac.uk}.
 }
 
 \seealso{
