@@ -1,4 +1,4 @@
-177f49ab07723a09b475b3a0f4625dc5 *DESCRIPTION
+2111f4a579a774a8f8ecb96810d9f5e3 *DESCRIPTION
 67dbc652656de0237051424e9187e90c *NAMESPACE
 18592a5958787d681cfe15963fcda800 *R/RJ_update.R
 3127bacd169668fc78ee1b264684e511 *R/RJ_update_swap.R
@@ -15,7 +15,7 @@ a508fb15ef344e6ea959e894a2db4c05 *R/beta_mode.R
 ca1638daf79cf90923aa77c8f6aeb6f2 *R/bict.R
 1e87dbe360dc927e3186cc44ab6e9cbf *R/bict.fit.R
 c03cb591aaeef168b48bcaf2fe7d5c49 *R/bictu.R
-61cf646da1be293905ee5c192f8b250f *R/conting-internal.R
+f0ea281e6a412c019b61edca3389f1f5 *R/conting-internal.R
 68bc5aa392bab62e619233a185ddb0f1 *R/drop_term.R
 a68218f0dbfc6c71a5b0a23f1b30c422 *R/find_cens.R
 f4b6a319e12138471edf2696293c1fe5 *R/formula2index.R
@@ -40,14 +40,14 @@ d7a8bdcc7bf88fa520e0db8b527dfa03 *R/print.modprobs.R
 9fb45565f2adfc3353bc403c3521f48d *R/print.submod.R
 9b386e0571098ea4d89def4d075af6d0 *R/print.totpop.R
 dc3d93688fa767f9268db85d2078f882 *R/prop_mod.R
-6742d6deb93755d3fd21b523640de821 *R/sub_model.R
+4a984cc6b9de4dcb6442581091d9cdcf *R/sub_model.R
 484ee82f07ee3d354c2c9d47c3120d5f *R/summary.bcct.R
 76cbecc2a22e6c4bd7c3ca66875683ae *R/summary.bict.R
 4dc87075a05d060e89a5bc3ff840d927 *R/total_pop.R
-00af4a4a3a9777a753baca224d7a1a47 *data/AOH.rda
-5ba2aaee051fd07931eef11a0277c98c *data/ScotPWID.rda
-346b8aa79b64cf4cc5f07d839c794259 *data/heart.rda
-02f469d3f15535f057ed109e5b40ecd1 *data/spina.rda
+0b7f9cb011ce1c0838f31798fb1f39a8 *data/AOH.rda
+975a1858eba4419f95bb576ad6151390 *data/ScotPWID.rda
+1f83d7ef1d33a10016fab7df572d2e5f *data/heart.rda
+2896c683e5e914a082388829774f6586 *data/spina.rda
 3ef105c118ade0a29beee1d448d55647 *man/AOH.Rd
 58e6c46702af146cf47c3125a88dd41d *man/RJ_update.Rd
 c6e4ab4cdbad12c1ed7fde854be13c61 *man/ScotPWID.Rd

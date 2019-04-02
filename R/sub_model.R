@@ -65,7 +65,7 @@ missing<-c(object$missing1,object$missing2)
 yyy<-object$maximal.mod$y[-missing]
 xxx<-object$maximal.mod$x[-missing,int_index==1]
 obs.z<-sum(yyy)
-redTOT<-apply(redY0,2,sum)+obs.z
+redTOT<-apply(redY0,1,sum)+obs.z
 int<-HPDinterval(mcmc(redTOT),prob=prob.level)
 meanTOT<-mean(redTOT)} else{
 yyy<-object$maximal.mod$y
